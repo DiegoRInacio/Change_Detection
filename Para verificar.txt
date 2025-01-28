@@ -1,0 +1,21 @@
+1 - Verificar se é a reflectância da superfície o que a coleção esta oferecendo
+ - verificado é a reflectância o que esta sendo transmitido
+
+2 - Compreender o que é o NBR
+ - NBR é um índice biofísico bem estabelecido comumente utilizado para avaliar a gravidade das mudanças induzidas pelo fogo nas paisagens. O NBR depende de bandas espectrais específicas, o NIR (ou seja, banda 5) e SWIR 2 (banda 7)
+https://www.mdpi.com/2673-4931/29/1/3
+
+3 - perguntas o que o NBR esta pegando
+ - Sendo assim o NBR é a resposta pós incêndio e não a resposta do incêndio como a banda termal faria, para isso temos o LST que é Temperatura da superfície terrestre, Este processo envolve uma abordagem de cálculo passo a passo, começando com a determinação da proporção de vegetação (Pv) (Equação (2)). Após esta etapa, incorporamos medidas de emissividade (ε) conforme descrito na Equação (3). Finalmente, usando a banda 10, calculamos o LST (Equação (4)).
+
+              Pv = ((NDVI − NDVImin)/(NDVImax − NDVImin))2	(2)
+                         ε = 0,004 × Pv + 0,986	(3)
+          LST = (Banda 10/(1 + (0,00115 × Banda 10/1,4388) × Ln(ε)))	(4)
+https://www.mdpi.com/2673-4931/29/1/3
+
+
+4 - vou coletar 5 pontos e verificar o NBR em cada ponto desse do INPE
+
+5 - Como o calculo de NBR esta sendo realizado é um média ou uma mediana das imagens e como esta sendo realizado
+
+na realidade a função nbr.min() realizar a classificação do mínimo do valor pixel a pixel, sendo assim, ela faz a seguinte classificação: se foi obtido 5 imagens das cinco imagens é realizada a verificação pixel a pixel do menor valor encontrado para classificar a imagem
